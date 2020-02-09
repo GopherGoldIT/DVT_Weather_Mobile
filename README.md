@@ -1,6 +1,12 @@
 # DVT Weather App Assessment 
 
+To run and build:
+
+1)  To genereate a key please visit https://openweathermap.org/appid
+Insert the key into DVTWeather->Services->OpenWeather->OpenWeatherConstants:
+ app_key = "appid=key" 
  
+
 
 Please complete the following: 
 
