@@ -11,6 +11,9 @@ Create a weather application to display the current weather at the user's locati
 
 You are required to implement one of 2 designs, the Forest design or the Sea design (see iOS Screen Designs or Android Screen Designs folders). You can choose either one. 
 
+![Forest](Documentation/iOSScreenDesigns/Forest/Forest - sunny.png)
+![Sea](Documentation/iOSScreenDesigns/Sea/Sea - sunny.png)
+
 The forecast must be based on the user’s current location. 
 
 The application should connect to the following API to collect the weather information. 
