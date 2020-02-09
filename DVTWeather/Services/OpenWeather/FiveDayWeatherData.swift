@@ -15,6 +15,7 @@ struct FiveDayWeatherData: Codable {
 struct FiveDayInnerWeatherData: Codable {
     let main: FiveDayMain
     let weather: [FiveDayWeather]
+    let dt : Double
 }
 
 struct FiveDayMain: Codable {

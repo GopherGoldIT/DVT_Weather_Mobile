@@ -15,9 +15,12 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet var backgroundView: UIView!
+    @IBOutlet weak var fiveDayForecastTable: UITableView!
     
     var weatherManager = WeatherManager()
     var fiveDayWeatherManager = FiveDayWeatherManager()
+    
+    var fiveDayList: FiveWeatherListModel?
     let locationManager = CLLocationManager()
     
     var lat : CLLocationDegrees?
@@ -29,6 +32,9 @@ class WeatherViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+        
+        fiveDayForecastTable.delegate = self
+        fiveDayForecastTable.dataSource = self
         
         weatherManager.delegate = self
         fiveDayWeatherManager.delegate = self
@@ -53,8 +59,6 @@ class WeatherViewController: UIViewController {
 }
 
 //MARK: - CLLocationManagerDelegate
-
-
 extension WeatherViewController: CLLocationManagerDelegate {
     
     @IBAction func locationPressed(_ sender: UIButton) {
@@ -99,13 +103,11 @@ extension WeatherViewController: WeatherManagerDelegate {
 //MARK: - FiveDayWeatherManagerDelegate
 extension WeatherViewController: FiveDayWeatherManagerDelegate {
     
-    func didUpdateFiveDayWeather(_ fiveDayeatherManager: FiveDayWeatherManager, weather: FiveDayWeatherData) {
+    func didUpdateFiveDayWeather(_ fiveDayeatherManager: FiveDayWeatherManager, weather: FiveWeatherListModel) {
         DispatchQueue.main.async {
-            print(weather)
-          /*  for weather in weather.list{
-                
-            }*/
-           // self.temperatureLabel.text = weather.temperatureString
+            for dayWeather in weather.list{
+                print(dayWeather.dateString)
+            }
         }
     }
     
@@ -113,6 +115,31 @@ extension WeatherViewController: FiveDayWeatherManagerDelegate {
         SetDefault()
         self.cityLabel.text = "Error : " + error.localizedDescription
     }
+}
+
+extension WeatherViewController:UITableViewDelegate{
+    
+}
+extension WeatherViewController:UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let fiveDay = fiveDayList{
+            return fiveDay.list.count
+        }else{
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FiveDayCell", for: indexPath) as! FiveDayTableViewCell
+        if let fiveDay = fiveDayList{
+            cell.dayLabel.text = fiveDay.list[indexPath.row].dateString
+            cell.conditionImage.image =  UIImage(systemName: fiveDay.list[indexPath.row].conditionName)
+            cell.tempretureLabel.text = fiveDay.list[indexPath.row].temperatureString
+        }
+        return cell
+    }
+    
+    
 }
 
 

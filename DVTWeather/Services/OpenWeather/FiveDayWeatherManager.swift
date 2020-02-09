@@ -10,13 +10,13 @@ import Foundation
 import CoreLocation
 
 protocol FiveDayWeatherManagerDelegate {
-    func didUpdateFiveDayWeather(_ fiveDayeatherManager: FiveDayWeatherManager, weather: FiveDayWeatherData)
+    func didUpdateFiveDayWeather(_ fiveDayeatherManager: FiveDayWeatherManager, weather: FiveWeatherListModel)
     func didFailWithErrorFiveDayWeather(error: Error)
 }
 
 struct FiveDayWeatherManager {
     
-let weatherURL = "\(Openweathermap.baseFiveDay)?\(Openweathermap.app_key)\(Openweathermap.units)\(Openweathermap.limit)"
+let weatherURL = "\(Openweathermap.baseFiveDay)?\(Openweathermap.app_key)\(Openweathermap.units)"
 var delegate: FiveDayWeatherManagerDelegate?
 
 func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
@@ -45,11 +45,23 @@ func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         }
     }
     
-    func parseJSON(_ weatherData: Data) -> FiveDayWeatherData? {
+    func parseJSON(_ weatherData: Data) -> FiveWeatherListModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(FiveDayWeatherData.self, from: weatherData)
-            return decodedData
+            var list : [FiveWeatherModel] = [];
+            for forecast in decodedData.list {
+                let id = forecast.weather[0].id
+                let temp = forecast.main.temp
+                let date = Date(timeIntervalSince1970: forecast.dt)
+                let calendar = Calendar.current
+                let hour = calendar.component(.hour, from: date)
+                if (11 ... 13).contains(hour){
+                    let weather = FiveWeatherModel(conditionId: id, temperature: temp, date: date)
+                    list.append(weather)
+                }
+            }
+            return FiveWeatherListModel(list: list)
         } catch {
             delegate?.didFailWithErrorFiveDayWeather(error: error)
             return nil
