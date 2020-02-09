@@ -1,0 +1,771 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97A8E4AC682D5D9E71D2CE63 /* Pods_DVTWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9108725655C844224993F4C4 /* Pods_DVTWeather.framework */; };
+		CEC50B3C5D49D4E849B1A49C /* Pods_DVTWeather_DVTWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EBE51B573F6CF958865CD8 /* Pods_DVTWeather_DVTWeatherUITests.framework */; };
+		DFD84202091E31888DAD4120 /* Pods_DVTWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9A95CF7C220C717ACEAEFE /* Pods_DVTWeatherTests.framework */; };
+		EE426B1123F0059E001CA940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B1023F0059E001CA940 /* AppDelegate.swift */; };
+		EE426B1323F0059E001CA940 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B1223F0059E001CA940 /* SceneDelegate.swift */; };
+		EE426B1523F0059E001CA940 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B1423F0059E001CA940 /* ViewController.swift */; };
+		EE426B1823F0059E001CA940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426B1623F0059E001CA940 /* Main.storyboard */; };
+		EE426B1B23F0059E001CA940 /* DVTWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE426B1923F0059E001CA940 /* DVTWeather.xcdatamodeld */; };
+		EE426B1D23F005A1001CA940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE426B1C23F005A1001CA940 /* Assets.xcassets */; };
+		EE426B2023F005A1001CA940 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426B1E23F005A1001CA940 /* LaunchScreen.storyboard */; };
+		EE426B2B23F005A1001CA940 /* DVTWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B2A23F005A1001CA940 /* DVTWeatherTests.swift */; };
+		EE426B3623F005A1001CA940 /* DVTWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B3523F005A1001CA940 /* DVTWeatherUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE426B2723F005A1001CA940 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE426B0523F0059E001CA940 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE426B0C23F0059E001CA940;
+			remoteInfo = DVTWeather;
+		};
+		EE426B3223F005A1001CA940 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE426B0523F0059E001CA940 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE426B0C23F0059E001CA940;
+			remoteInfo = DVTWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11BAD744F83EC5560E7229CC /* Pods-DVTWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVTWeather.debug.xcconfig"; path = "Target Support Files/Pods-DVTWeather/Pods-DVTWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		23FF49C5CAC36A8D16A87FBF /* Pods-DVTWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVTWeatherTests.release.xcconfig"; path = "Target Support Files/Pods-DVTWeatherTests/Pods-DVTWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
+		3F57B5C868CC1D7EA5849C12 /* Pods-DVTWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVTWeather.release.xcconfig"; path = "Target Support Files/Pods-DVTWeather/Pods-DVTWeather.release.xcconfig"; sourceTree = "<group>"; };
+		5CCC343CADAC04E74B415BFF /* Pods-DVTWeather-DVTWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVTWeather-DVTWeatherUITests.release.xcconfig"; path = "Target Support Files/Pods-DVTWeather-DVTWeatherUITests/Pods-DVTWeather-DVTWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
+		68EBE51B573F6CF958865CD8 /* Pods_DVTWeather_DVTWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVTWeather_DVTWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DB4CA7A582BA12BF94469F3 /* Pods-DVTWeather-DVTWeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVTWeather-DVTWeatherUITests.debug.xcconfig"; path = "Target Support Files/Pods-DVTWeather-DVTWeatherUITests/Pods-DVTWeather-DVTWeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8FA8A347DC2406D256CE5898 /* Pods-DVTWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVTWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-DVTWeatherTests/Pods-DVTWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9108725655C844224993F4C4 /* Pods_DVTWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVTWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE9A95CF7C220C717ACEAEFE /* Pods_DVTWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVTWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE426B0D23F0059E001CA940 /* DVTWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVTWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE426B1023F0059E001CA940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE426B1223F0059E001CA940 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EE426B1423F0059E001CA940 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE426B1723F0059E001CA940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE426B1A23F0059E001CA940 /* DVTWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DVTWeather.xcdatamodel; sourceTree = "<group>"; };
+		EE426B1C23F005A1001CA940 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE426B1F23F005A1001CA940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE426B2123F005A1001CA940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE426B2623F005A1001CA940 /* DVTWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVTWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE426B2A23F005A1001CA940 /* DVTWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVTWeatherTests.swift; sourceTree = "<group>"; };
+		EE426B2C23F005A1001CA940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE426B3123F005A1001CA940 /* DVTWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVTWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE426B3523F005A1001CA940 /* DVTWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVTWeatherUITests.swift; sourceTree = "<group>"; };
+		EE426B3723F005A1001CA940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE426B0A23F0059E001CA940 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97A8E4AC682D5D9E71D2CE63 /* Pods_DVTWeather.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE426B2323F005A1001CA940 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFD84202091E31888DAD4120 /* Pods_DVTWeatherTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE426B2E23F005A1001CA940 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC50B3C5D49D4E849B1A49C /* Pods_DVTWeather_DVTWeatherUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09929A35C19290B7AB88E9AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11BAD744F83EC5560E7229CC /* Pods-DVTWeather.debug.xcconfig */,
+				3F57B5C868CC1D7EA5849C12 /* Pods-DVTWeather.release.xcconfig */,
+				8DB4CA7A582BA12BF94469F3 /* Pods-DVTWeather-DVTWeatherUITests.debug.xcconfig */,
+				5CCC343CADAC04E74B415BFF /* Pods-DVTWeather-DVTWeatherUITests.release.xcconfig */,
+				8FA8A347DC2406D256CE5898 /* Pods-DVTWeatherTests.debug.xcconfig */,
+				23FF49C5CAC36A8D16A87FBF /* Pods-DVTWeatherTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		23A7AC96A288ED9E83F2E13A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9108725655C844224993F4C4 /* Pods_DVTWeather.framework */,
+				68EBE51B573F6CF958865CD8 /* Pods_DVTWeather_DVTWeatherUITests.framework */,
+				AE9A95CF7C220C717ACEAEFE /* Pods_DVTWeatherTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE426B0423F0059E001CA940 = {
+			isa = PBXGroup;
+			children = (
+				EE426B0F23F0059E001CA940 /* DVTWeather */,
+				EE426B2923F005A1001CA940 /* DVTWeatherTests */,
+				EE426B3423F005A1001CA940 /* DVTWeatherUITests */,
+				EE426B0E23F0059E001CA940 /* Products */,
+				09929A35C19290B7AB88E9AD /* Pods */,
+				23A7AC96A288ED9E83F2E13A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EE426B0E23F0059E001CA940 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE426B0D23F0059E001CA940 /* DVTWeather.app */,
+				EE426B2623F005A1001CA940 /* DVTWeatherTests.xctest */,
+				EE426B3123F005A1001CA940 /* DVTWeatherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE426B0F23F0059E001CA940 /* DVTWeather */ = {
+			isa = PBXGroup;
+			children = (
+				EE426B4723F00628001CA940 /* CoreData */,
+				EE426B4623F005EE001CA940 /* Control */,
+				EE426B4523F005E8001CA940 /* View */,
+				EE426B4423F005DE001CA940 /* Model */,
+				EE426B4323F005BB001CA940 /* Resources */,
+				EE426B1023F0059E001CA940 /* AppDelegate.swift */,
+				EE426B1223F0059E001CA940 /* SceneDelegate.swift */,
+				EE426B2123F005A1001CA940 /* Info.plist */,
+			);
+			path = DVTWeather;
+			sourceTree = "<group>";
+		};
+		EE426B2923F005A1001CA940 /* DVTWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE426B2A23F005A1001CA940 /* DVTWeatherTests.swift */,
+				EE426B2C23F005A1001CA940 /* Info.plist */,
+			);
+			path = DVTWeatherTests;
+			sourceTree = "<group>";
+		};
+		EE426B3423F005A1001CA940 /* DVTWeatherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE426B3523F005A1001CA940 /* DVTWeatherUITests.swift */,
+				EE426B3723F005A1001CA940 /* Info.plist */,
+			);
+			path = DVTWeatherUITests;
+			sourceTree = "<group>";
+		};
+		EE426B4323F005BB001CA940 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE426B1C23F005A1001CA940 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE426B4423F005DE001CA940 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE426B4523F005E8001CA940 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE426B1623F0059E001CA940 /* Main.storyboard */,
+				EE426B1E23F005A1001CA940 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE426B4623F005EE001CA940 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				EE426B1423F0059E001CA940 /* ViewController.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		EE426B4723F00628001CA940 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EE426B1923F0059E001CA940 /* DVTWeather.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE426B0C23F0059E001CA940 /* DVTWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE426B3A23F005A1001CA940 /* Build configuration list for PBXNativeTarget "DVTWeather" */;
+			buildPhases = (
+				829FD4AD42F73645D9099678 /* [CP] Check Pods Manifest.lock */,
+				EE426B0923F0059E001CA940 /* Sources */,
+				EE426B0A23F0059E001CA940 /* Frameworks */,
+				EE426B0B23F0059E001CA940 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DVTWeather;
+			productName = DVTWeather;
+			productReference = EE426B0D23F0059E001CA940 /* DVTWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE426B2523F005A1001CA940 /* DVTWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE426B3D23F005A1001CA940 /* Build configuration list for PBXNativeTarget "DVTWeatherTests" */;
+			buildPhases = (
+				A3BE01DC411A3F735AE45A19 /* [CP] Check Pods Manifest.lock */,
+				EE426B2223F005A1001CA940 /* Sources */,
+				EE426B2323F005A1001CA940 /* Frameworks */,
+				EE426B2423F005A1001CA940 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE426B2823F005A1001CA940 /* PBXTargetDependency */,
+			);
+			name = DVTWeatherTests;
+			productName = DVTWeatherTests;
+			productReference = EE426B2623F005A1001CA940 /* DVTWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EE426B3023F005A1001CA940 /* DVTWeatherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE426B4023F005A1001CA940 /* Build configuration list for PBXNativeTarget "DVTWeatherUITests" */;
+			buildPhases = (
+				02ED5449A47F65A2D33B299F /* [CP] Check Pods Manifest.lock */,
+				EE426B2D23F005A1001CA940 /* Sources */,
+				EE426B2E23F005A1001CA940 /* Frameworks */,
+				EE426B2F23F005A1001CA940 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE426B3323F005A1001CA940 /* PBXTargetDependency */,
+			);
+			name = DVTWeatherUITests;
+			productName = DVTWeatherUITests;
+			productReference = EE426B3123F005A1001CA940 /* DVTWeatherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE426B0523F0059E001CA940 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Shaun Churchyard";
+				TargetAttributes = {
+					EE426B0C23F0059E001CA940 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					EE426B2523F005A1001CA940 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EE426B0C23F0059E001CA940;
+					};
+					EE426B3023F005A1001CA940 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EE426B0C23F0059E001CA940;
+					};
+				};
+			};
+			buildConfigurationList = EE426B0823F0059E001CA940 /* Build configuration list for PBXProject "DVTWeather" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE426B0423F0059E001CA940;
+			productRefGroup = EE426B0E23F0059E001CA940 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE426B0C23F0059E001CA940 /* DVTWeather */,
+				EE426B2523F005A1001CA940 /* DVTWeatherTests */,
+				EE426B3023F005A1001CA940 /* DVTWeatherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE426B0B23F0059E001CA940 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE426B2023F005A1001CA940 /* LaunchScreen.storyboard in Resources */,
+				EE426B1D23F005A1001CA940 /* Assets.xcassets in Resources */,
+				EE426B1823F0059E001CA940 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE426B2423F005A1001CA940 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE426B2F23F005A1001CA940 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02ED5449A47F65A2D33B299F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DVTWeather-DVTWeatherUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		829FD4AD42F73645D9099678 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DVTWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3BE01DC411A3F735AE45A19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DVTWeatherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE426B0923F0059E001CA940 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE426B1523F0059E001CA940 /* ViewController.swift in Sources */,
+				EE426B1B23F0059E001CA940 /* DVTWeather.xcdatamodeld in Sources */,
+				EE426B1123F0059E001CA940 /* AppDelegate.swift in Sources */,
+				EE426B1323F0059E001CA940 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE426B2223F005A1001CA940 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE426B2B23F005A1001CA940 /* DVTWeatherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE426B2D23F005A1001CA940 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE426B3623F005A1001CA940 /* DVTWeatherUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE426B2823F005A1001CA940 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE426B0C23F0059E001CA940 /* DVTWeather */;
+			targetProxy = EE426B2723F005A1001CA940 /* PBXContainerItemProxy */;
+		};
+		EE426B3323F005A1001CA940 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE426B0C23F0059E001CA940 /* DVTWeather */;
+			targetProxy = EE426B3223F005A1001CA940 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE426B1623F0059E001CA940 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE426B1723F0059E001CA940 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EE426B1E23F005A1001CA940 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE426B1F23F005A1001CA940 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE426B3823F005A1001CA940 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE426B3923F005A1001CA940 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE426B3B23F005A1001CA940 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11BAD744F83EC5560E7229CC /* Pods-DVTWeather.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7CMFNDMDJ;
+				INFOPLIST_FILE = DVTWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gophergoldit.DVTWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EE426B3C23F005A1001CA940 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F57B5C868CC1D7EA5849C12 /* Pods-DVTWeather.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7CMFNDMDJ;
+				INFOPLIST_FILE = DVTWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gophergoldit.DVTWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EE426B3E23F005A1001CA940 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FA8A347DC2406D256CE5898 /* Pods-DVTWeatherTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7CMFNDMDJ;
+				INFOPLIST_FILE = DVTWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gophergoldit.DVTWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DVTWeather.app/DVTWeather";
+			};
+			name = Debug;
+		};
+		EE426B3F23F005A1001CA940 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23FF49C5CAC36A8D16A87FBF /* Pods-DVTWeatherTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7CMFNDMDJ;
+				INFOPLIST_FILE = DVTWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gophergoldit.DVTWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DVTWeather.app/DVTWeather";
+			};
+			name = Release;
+		};
+		EE426B4123F005A1001CA940 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DB4CA7A582BA12BF94469F3 /* Pods-DVTWeather-DVTWeatherUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7CMFNDMDJ;
+				INFOPLIST_FILE = DVTWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gophergoldit.DVTWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DVTWeather;
+			};
+			name = Debug;
+		};
+		EE426B4223F005A1001CA940 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CCC343CADAC04E74B415BFF /* Pods-DVTWeather-DVTWeatherUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7CMFNDMDJ;
+				INFOPLIST_FILE = DVTWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gophergoldit.DVTWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DVTWeather;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE426B0823F0059E001CA940 /* Build configuration list for PBXProject "DVTWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE426B3823F005A1001CA940 /* Debug */,
+				EE426B3923F005A1001CA940 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE426B3A23F005A1001CA940 /* Build configuration list for PBXNativeTarget "DVTWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE426B3B23F005A1001CA940 /* Debug */,
+				EE426B3C23F005A1001CA940 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE426B3D23F005A1001CA940 /* Build configuration list for PBXNativeTarget "DVTWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE426B3E23F005A1001CA940 /* Debug */,
+				EE426B3F23F005A1001CA940 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE426B4023F005A1001CA940 /* Build configuration list for PBXNativeTarget "DVTWeatherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE426B4123F005A1001CA940 /* Debug */,
+				EE426B4223F005A1001CA940 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EE426B1923F0059E001CA940 /* DVTWeather.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EE426B1A23F0059E001CA940 /* DVTWeather.xcdatamodel */,
+			);
+			currentVersion = EE426B1A23F0059E001CA940 /* DVTWeather.xcdatamodel */;
+			path = DVTWeather.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EE426B0523F0059E001CA940 /* Project object */;
+}
