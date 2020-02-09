@@ -15,7 +15,9 @@ class WeatherViewController: UIViewController {
     
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var conditionImage: UIImageView!
+    @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet var backgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,18 @@ extension WeatherViewController: WeatherManagerDelegate {
             self.temperatureLabel.text = weather.temperatureString
             self.conditionImage.image = UIImage(systemName: weather.conditionName)
             self.cityLabel.text = weather.cityName
+            self.conditionLabel.text = weather.conditionLabel
+            
+            switch weather.WeatherConditionTypeID {
+            case WeatherConditionTypeID.Cloudy:
+                self.backgroundView.backgroundColor = #colorLiteral(red: 0.3294117647, green: 0.4431372549, blue: 0.4784313725, alpha: 1)
+                return
+            case WeatherConditionTypeID.Sunny:
+                self.backgroundView.backgroundColor = #colorLiteral(red: 0.2784313725, green: 0.6705882353, blue: 0.1843137255, alpha: 1)
+                return
+            default:
+                self.backgroundView.backgroundColor = #colorLiteral(red: 0.3411764706, green: 0.3411764706, blue: 0.3647058824, alpha: 1)
+            }
         }
     }
     
