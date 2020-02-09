@@ -18,7 +18,7 @@
 		EE28A7B523F05E1A00F8309A /* WeatherConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE28A7B423F05E1A00F8309A /* WeatherConstants.swift */; };
 		EE426B1123F0059E001CA940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B1023F0059E001CA940 /* AppDelegate.swift */; };
 		EE426B1323F0059E001CA940 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B1223F0059E001CA940 /* SceneDelegate.swift */; };
-		EE426B1523F0059E001CA940 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B1423F0059E001CA940 /* ViewController.swift */; };
+		EE426B1523F0059E001CA940 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B1423F0059E001CA940 /* WeatherViewController.swift */; };
 		EE426B1823F0059E001CA940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426B1623F0059E001CA940 /* Main.storyboard */; };
 		EE426B1B23F0059E001CA940 /* DVTWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE426B1923F0059E001CA940 /* DVTWeather.xcdatamodeld */; };
 		EE426B1D23F005A1001CA940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE426B1C23F005A1001CA940 /* Assets.xcassets */; };
@@ -63,7 +63,7 @@
 		EE426B0D23F0059E001CA940 /* DVTWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVTWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE426B1023F0059E001CA940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE426B1223F0059E001CA940 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE426B1423F0059E001CA940 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE426B1423F0059E001CA940 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		EE426B1723F0059E001CA940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE426B1A23F0059E001CA940 /* DVTWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DVTWeather.xcdatamodel; sourceTree = "<group>"; };
 		EE426B1C23F005A1001CA940 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,12 +173,12 @@
 		EE426B0F23F0059E001CA940 /* DVTWeather */ = {
 			isa = PBXGroup;
 			children = (
-				EE28A7AA23F0108400F8309A /* Services */,
-				EE426B4723F00628001CA940 /* CoreData */,
-				EE426B4623F005EE001CA940 /* Control */,
-				EE426B4523F005E8001CA940 /* View */,
-				EE426B4423F005DE001CA940 /* Model */,
 				EE426B4323F005BB001CA940 /* Resources */,
+				EE426B4723F00628001CA940 /* CoreData */,
+				EE28A7AA23F0108400F8309A /* Services */,
+				EE426B4423F005DE001CA940 /* Model */,
+				EE426B4523F005E8001CA940 /* View */,
+				EE426B4623F005EE001CA940 /* Controller */,
 				EE426B1023F0059E001CA940 /* AppDelegate.swift */,
 				EE426B1223F0059E001CA940 /* SceneDelegate.swift */,
 				EE426B2123F005A1001CA940 /* Info.plist */,
@@ -229,12 +229,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		EE426B4623F005EE001CA940 /* Control */ = {
+		EE426B4623F005EE001CA940 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EE426B1423F0059E001CA940 /* ViewController.swift */,
+				EE426B1423F0059E001CA940 /* WeatherViewController.swift */,
 			);
-			path = Control;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		EE426B4723F00628001CA940 /* CoreData */ = {
@@ -449,7 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE426B1523F0059E001CA940 /* ViewController.swift in Sources */,
+				EE426B1523F0059E001CA940 /* WeatherViewController.swift in Sources */,
 				EE426B1B23F0059E001CA940 /* DVTWeather.xcdatamodeld in Sources */,
 				EE28A7AD23F010ED00F8309A /* WeatherManager.swift in Sources */,
 				EE28A7B123F0119C00F8309A /* WeatherModel.swift in Sources */,

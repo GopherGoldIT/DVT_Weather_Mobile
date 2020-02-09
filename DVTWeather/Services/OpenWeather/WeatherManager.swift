@@ -9,6 +9,19 @@
 import Foundation
 import CoreLocation
 
+enum WeatherManagerError: Error {
+    case key
+}
+
+extension WeatherManagerError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .key:
+            return "Please insert key for openweathermap"
+        }
+    }
+}
+
 protocol WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
     func didFailWithError(error: Error)
@@ -25,8 +38,12 @@ struct WeatherManager {
     }
     
     func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
-        performRequest(with: urlString)
+        if Openweathermap.app_key != "appid=key" {
+            let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
+            performRequest(with: urlString)
+        }else{
+            delegate?.didFailWithError(error: WeatherManagerError.key)
+        }
     }
     
     func performRequest(with urlString: String) {
