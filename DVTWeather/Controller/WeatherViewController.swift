@@ -10,14 +10,18 @@ import UIKit
 import CoreLocation
 
 class WeatherViewController: UIViewController {
-    var weatherManager = WeatherManager()
-    let locationManager = CLLocationManager()
-    
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var conditionImage: UIImageView!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet var backgroundView: UIView!
+    
+    var weatherManager = WeatherManager()
+    var fiveDayWeatherManager = FiveDayWeatherManager()
+    let locationManager = CLLocationManager()
+    
+    var lat : CLLocationDegrees?
+    var lon : CLLocationDegrees?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,8 @@ class WeatherViewController: UIViewController {
         locationManager.requestLocation()
         
         weatherManager.delegate = self
+        fiveDayWeatherManager.delegate = self
+        SetDefault()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,32 +42,13 @@ class WeatherViewController: UIViewController {
     func GetLocation(){
         locationManager.requestLocation()
     }
-}
-
-extension WeatherViewController: WeatherManagerDelegate {
     
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-        DispatchQueue.main.async {
-            self.temperatureLabel.text = weather.temperatureString
-            self.conditionImage.image = UIImage(systemName: weather.conditionName)
-            self.cityLabel.text = weather.cityName
-            self.conditionLabel.text = weather.conditionLabel
-            
-            switch weather.WeatherConditionTypeID {
-            case WeatherConditionTypeID.Cloudy:
-                self.backgroundView.backgroundColor = #colorLiteral(red: 0.3294117647, green: 0.4431372549, blue: 0.4784313725, alpha: 1)
-                return
-            case WeatherConditionTypeID.Sunny:
-                self.backgroundView.backgroundColor = #colorLiteral(red: 0.2784313725, green: 0.6705882353, blue: 0.1843137255, alpha: 1)
-                return
-            default:
-                self.backgroundView.backgroundColor = #colorLiteral(red: 0.3411764706, green: 0.3411764706, blue: 0.3647058824, alpha: 1)
-            }
-        }
-    }
-    
-    func didFailWithError(error: Error) {
-        self.cityLabel.text = "Error : " + error.localizedDescription
+    func SetDefault(){
+        self.temperatureLabel.text = "0"
+        self.conditionImage.image = UIImage(systemName: "sun.max")
+        self.cityLabel.text = ""
+        self.conditionLabel.text = ""
+        self.backgroundView.backgroundColor = #colorLiteral(red: 0.2784313725, green: 0.6705882353, blue: 0.1843137255, alpha: 1)
     }
 }
 
@@ -77,14 +64,56 @@ extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
-            let lat = location.coordinate.latitude
-            let lon = location.coordinate.longitude
-            weatherManager.fetchWeather(latitude: lat, longitude: lon)
+            self.lat = location.coordinate.latitude
+            self.lon = location.coordinate.longitude
+            weatherManager.fetchWeather(latitude: lat!, longitude: lon!)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        SetDefault()
         self.cityLabel.text = "Error : " + error.localizedDescription
     }
 }
+//MARK: - WeatherManagerDelegate
+extension WeatherViewController: WeatherManagerDelegate {
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = weather.temperatureString
+            self.conditionImage.image = UIImage(systemName: weather.conditionName)
+            self.cityLabel.text = weather.cityName
+            self.conditionLabel.text = weather.conditionLabel
+            self.backgroundView.backgroundColor = weather.conditionBackgroungColor
+            if let lat = self.lat, let lon = self.lon{
+                self.fiveDayWeatherManager.fetchWeather(latitude: lat, longitude: lon)
+            }
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        SetDefault()
+        self.cityLabel.text = "Error : " + error.localizedDescription
+    }
+}
+//MARK: - FiveDayWeatherManagerDelegate
+extension WeatherViewController: FiveDayWeatherManagerDelegate {
+    
+    func didUpdateFiveDayWeather(_ fiveDayeatherManager: FiveDayWeatherManager, weather: FiveDayWeatherData) {
+        DispatchQueue.main.async {
+            print(weather)
+          /*  for weather in weather.list{
+                
+            }*/
+           // self.temperatureLabel.text = weather.temperatureString
+        }
+    }
+    
+    func didFailWithErrorFiveDayWeather(error: Error) {
+        SetDefault()
+        self.cityLabel.text = "Error : " + error.localizedDescription
+    }
+}
+
+
 

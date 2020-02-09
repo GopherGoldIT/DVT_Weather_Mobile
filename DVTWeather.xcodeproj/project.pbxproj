@@ -25,6 +25,8 @@
 		EE426B2023F005A1001CA940 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426B1E23F005A1001CA940 /* LaunchScreen.storyboard */; };
 		EE426B2B23F005A1001CA940 /* DVTWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B2A23F005A1001CA940 /* DVTWeatherTests.swift */; };
 		EE426B3623F005A1001CA940 /* DVTWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B3523F005A1001CA940 /* DVTWeatherUITests.swift */; };
+		EE70962C23F07D4700291AE9 /* FiveDayWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70962B23F07D4700291AE9 /* FiveDayWeatherManager.swift */; };
+		EE70962E23F0844D00291AE9 /* FiveDayWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70962D23F0844D00291AE9 /* FiveDayWeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		EE426B3123F005A1001CA940 /* DVTWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVTWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE426B3523F005A1001CA940 /* DVTWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVTWeatherUITests.swift; sourceTree = "<group>"; };
 		EE426B3723F005A1001CA940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE70962B23F07D4700291AE9 /* FiveDayWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayWeatherManager.swift; sourceTree = "<group>"; };
+		EE70962D23F0844D00291AE9 /* FiveDayWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayWeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				EE28A7AE23F0115E00F8309A /* WeatherData.swift */,
 				EE28A7B023F0119C00F8309A /* WeatherModel.swift */,
 				EE28A7B423F05E1A00F8309A /* WeatherConstants.swift */,
+				EE70962B23F07D4700291AE9 /* FiveDayWeatherManager.swift */,
+				EE70962D23F0844D00291AE9 /* FiveDayWeatherData.swift */,
 			);
 			path = OpenWeather;
 			sourceTree = "<group>";
@@ -452,10 +458,12 @@
 				EE426B1523F0059E001CA940 /* WeatherViewController.swift in Sources */,
 				EE426B1B23F0059E001CA940 /* DVTWeather.xcdatamodeld in Sources */,
 				EE28A7AD23F010ED00F8309A /* WeatherManager.swift in Sources */,
+				EE70962E23F0844D00291AE9 /* FiveDayWeatherData.swift in Sources */,
 				EE28A7B123F0119C00F8309A /* WeatherModel.swift in Sources */,
 				EE426B1123F0059E001CA940 /* AppDelegate.swift in Sources */,
 				EE28A7AF23F0115E00F8309A /* WeatherData.swift in Sources */,
 				EE28A7B523F05E1A00F8309A /* WeatherConstants.swift in Sources */,
+				EE70962C23F07D4700291AE9 /* FiveDayWeatherManager.swift in Sources */,
 				EE426B1323F0059E001CA940 /* SceneDelegate.swift in Sources */,
 				EE28A7B323F0126400F8309A /* Constants.swift in Sources */,
 			);
