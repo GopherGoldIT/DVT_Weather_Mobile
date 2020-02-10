@@ -7,12 +7,6 @@ target 'DVTWeather' do
   pod 'BonMot'
   pod 'lottie-ios'
   
-  pod 'GoogleMaps'
-  pod 'GooglePlacePicker'
-  pod 'GooglePlaces'
-  pod 'Alamofire', '~> 4.7'
-  pod 'SwiftyJSON', '~> 4.0'
-
   target 'DVTWeatherTests' do
     inherit! :search_paths
     # Pods for testing

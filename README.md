@@ -10,6 +10,11 @@ Insert the key into DVTWeather->Services->OpenWeather->OpenWeatherConstants.swif
  Insert the key into DVTWeather->Services->GoogleLocation->GoogleConstants.swift:
  provideAPIKey = "YOUR_API_KEY"
  
+ NB Please do not restrict the key.
+https://github.com/tryWabbit/
+
+ 3) Please run "pod update" just to be safe
+ 
  
 # What is Required
 

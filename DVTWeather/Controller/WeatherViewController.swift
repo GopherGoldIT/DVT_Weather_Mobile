@@ -21,6 +21,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var favouritesButton: UIButton!
     @IBOutlet weak var lottieAnimation: UIView!
+    @IBOutlet weak var favouriteButton: UIButton!
     
     var weatherManager = WeatherManager()
     var fiveDayWeatherManager = FiveDayWeatherManager()
@@ -31,11 +32,13 @@ class WeatherViewController: UIViewController {
     var lat : CLLocationDegrees?
     var lon : CLLocationDegrees?
     
+    var isFav:Bool=false
+    
     let animationView = AnimationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        isFav = false
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
@@ -58,8 +61,20 @@ class WeatherViewController: UIViewController {
         navigationController?.isNavigationBarHidden=false
     }
     
+    @IBAction func favButtonClick(_ sender: UIButton) {
+        if isFav{
+            self.favouriteButton.setImage(UIImage(named: "minus.circle.fill"), for: .normal)
+            
+        }else{
+            self.favouriteButton.setImage(UIImage(named: "plus.circle.fill"), for: .normal)
+        }
+        isFav = !isFav
+    }
     override func viewDidAppear(_ animated: Bool) {
-        GetLocation()
+        if (lat==nil)
+        {
+            GetLocation()
+        }
     }
     
     // MARK: - Navigation
@@ -68,7 +83,7 @@ class WeatherViewController: UIViewController {
         {
             if let destinationVC = segue.destination as? MoreViewController {
                 if let geoLat = lat,let geoLon = lon{
-                    destinationVC.SetLocation(geoLat,geoLon)
+                    destinationVC.SetLocation(geoLon,geoLat)
                 }
             }
         }
@@ -98,16 +113,19 @@ class WeatherViewController: UIViewController {
     }
     
     func GetLocation(){
+        
         ShowLottie()
         locationManager.requestLocation()
     }
     
     func SetDefault(){
+       // self.favouriteButton.isHidden=true
+        self.favouriteButton.setImage(UIImage(named: "plus.circle.fill"), for: .normal)
         self.temperatureLabel.attributedText = DegAttributeText("0",self.temperatureLabel.font,self.temperatureLabel.textColor)
         self.conditionImage.image = UIImage(systemName: "sun.max")
         self.cityLabel.text = ""
         self.conditionLabel.text = ""
-        self.backgroundView.backgroundColor = #colorLiteral(red: 0.2784313725, green: 0.6705882353, blue: 0.1843137255, alpha: 1)
+        self.backgroundView.backgroundColor = #colorLiteral(red: 0.3294117647, green: 0.4431372549, blue: 0.4784313725, alpha: 1)
         self.moreButton.isEnabled = false
         self.favouritesButton.isEnabled = false
     }
@@ -166,6 +184,7 @@ extension WeatherViewController: FiveDayWeatherManagerDelegate {
             self.fiveDayList = weather;
             self.fiveDayForecastTable.reloadData()
             self.moreButton.isEnabled = true
+            self.favouriteButton.isHidden=true
             self.HideLottie()
         }
     }
@@ -185,6 +204,7 @@ extension WeatherViewController:UITableViewDataSource{
             cell.conditionImage.image =  UIImage(systemName: fiveDay.list[indexPath.row].conditionName)
             cell.tempretureLabel.attributedText = self.DegAttributeText(fiveDay.list[indexPath.row].temperatureString,cell.tempretureLabel.font,cell.tempretureLabel.textColor)
         }
+        cell.layer.backgroundColor = UIColor.clear.cgColor
         return cell
     }
     

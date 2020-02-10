@@ -34,6 +34,11 @@
 		EE79930423F173E900381CD4 /* GoogleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79930323F173E900381CD4 /* GoogleConstants.swift */; };
 		EE79930623F174F600381CD4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79930523F174F600381CD4 /* MoreViewController.swift */; };
 		EE79930A23F184D800381CD4 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = EE79930923F184D800381CD4 /* loader.json */; };
+		EE9E9B7923F1B4A700CA6E8E /* GoogleApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E9B7623F1B4A400CA6E8E /* GoogleApiHelper.swift */; };
+		EE9E9B7A23F1B4A700CA6E8E /* GoogleApiHelper+Nearby.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E9B7723F1B4A500CA6E8E /* GoogleApiHelper+Nearby.swift */; };
+		EE9E9B7B23F1B4A700CA6E8E /* NearByEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E9B7823F1B4A700CA6E8E /* NearByEnum.swift */; };
+		EEA1A61D23F1CC2B00472FCE /* PlacesNearMeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA1A61C23F1CC2B00472FCE /* PlacesNearMeManager.swift */; };
+		EEA1A61F23F1CC7600472FCE /* PlacesNearMeManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA1A61E23F1CC7600472FCE /* PlacesNearMeManagerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +98,11 @@
 		EE79930323F173E900381CD4 /* GoogleConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleConstants.swift; sourceTree = "<group>"; };
 		EE79930523F174F600381CD4 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		EE79930923F184D800381CD4 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		EE9E9B7623F1B4A400CA6E8E /* GoogleApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiHelper.swift; sourceTree = "<group>"; };
+		EE9E9B7723F1B4A500CA6E8E /* GoogleApiHelper+Nearby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleApiHelper+Nearby.swift"; sourceTree = "<group>"; };
+		EE9E9B7823F1B4A700CA6E8E /* NearByEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByEnum.swift; sourceTree = "<group>"; };
+		EEA1A61C23F1CC2B00472FCE /* PlacesNearMeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesNearMeManager.swift; sourceTree = "<group>"; };
+		EEA1A61E23F1CC7600472FCE /* PlacesNearMeManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesNearMeManagerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,9 +285,22 @@
 		EE79930223F173C100381CD4 /* GoogleLocation */ = {
 			isa = PBXGroup;
 			children = (
+				EE9E9B7523F1B47F00CA6E8E /* Google-Api-Helper */,
 				EE79930323F173E900381CD4 /* GoogleConstants.swift */,
+				EEA1A61C23F1CC2B00472FCE /* PlacesNearMeManager.swift */,
+				EEA1A61E23F1CC7600472FCE /* PlacesNearMeManagerModel.swift */,
 			);
 			path = GoogleLocation;
+			sourceTree = "<group>";
+		};
+		EE9E9B7523F1B47F00CA6E8E /* Google-Api-Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EE9E9B7623F1B4A400CA6E8E /* GoogleApiHelper.swift */,
+				EE9E9B7723F1B4A500CA6E8E /* GoogleApiHelper+Nearby.swift */,
+				EE9E9B7823F1B4A700CA6E8E /* NearByEnum.swift */,
+			);
+			path = "Google-Api-Helper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +315,6 @@
 				EE426B0A23F0059E001CA940 /* Frameworks */,
 				EE426B0B23F0059E001CA940 /* Resources */,
 				B950E98D3BDBBADF264C142D /* [CP] Embed Pods Frameworks */,
-				C08623950690AE0EDF1AB4E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,7 +353,6 @@
 				EE426B2E23F005A1001CA940 /* Frameworks */,
 				EE426B2F23F005A1001CA940 /* Resources */,
 				A23B1CF5DBC117038E6D89C3 /* [CP] Embed Pods Frameworks */,
-				55198E2A8EE7CF039A372E5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -439,23 +460,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		55198E2A8EE7CF039A372E5F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DVTWeather-DVTWeatherUITests/Pods-DVTWeather-DVTWeatherUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DVTWeather-DVTWeatherUITests/Pods-DVTWeather-DVTWeatherUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DVTWeather-DVTWeatherUITests/Pods-DVTWeather-DVTWeatherUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		829FD4AD42F73645D9099678 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -534,23 +538,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DVTWeather/Pods-DVTWeather-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C08623950690AE0EDF1AB4E6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DVTWeather/Pods-DVTWeather-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DVTWeather/Pods-DVTWeather-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DVTWeather/Pods-DVTWeather-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -559,11 +546,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE426B1523F0059E001CA940 /* WeatherViewController.swift in Sources */,
+				EEA1A61F23F1CC7600472FCE /* PlacesNearMeManagerModel.swift in Sources */,
 				EE426B1B23F0059E001CA940 /* DVTWeather.xcdatamodeld in Sources */,
 				EE28A7AD23F010ED00F8309A /* WeatherManager.swift in Sources */,
+				EE9E9B7923F1B4A700CA6E8E /* GoogleApiHelper.swift in Sources */,
 				EE70963223F0A4BC00291AE9 /* FavouriteTableViewController.swift in Sources */,
 				EE79930423F173E900381CD4 /* GoogleConstants.swift in Sources */,
 				EE79930623F174F600381CD4 /* MoreViewController.swift in Sources */,
+				EEA1A61D23F1CC2B00472FCE /* PlacesNearMeManager.swift in Sources */,
 				EE70962E23F0844D00291AE9 /* FiveDayWeatherData.swift in Sources */,
 				EE28A7B123F0119C00F8309A /* WeatherModel.swift in Sources */,
 				EE70963023F08E0100291AE9 /* FiveDayWeatherModel.swift in Sources */,
@@ -571,8 +561,10 @@
 				EE28A7AF23F0115E00F8309A /* WeatherData.swift in Sources */,
 				EE28A7B523F05E1A00F8309A /* WeatherConstants.swift in Sources */,
 				EE70962C23F07D4700291AE9 /* FiveDayWeatherManager.swift in Sources */,
+				EE9E9B7A23F1B4A700CA6E8E /* GoogleApiHelper+Nearby.swift in Sources */,
 				EE426B1323F0059E001CA940 /* SceneDelegate.swift in Sources */,
 				EE70963723F0A84100291AE9 /* FiveDayTableViewCell.swift in Sources */,
+				EE9E9B7B23F1B4A700CA6E8E /* NearByEnum.swift in Sources */,
 				EE28A7B323F0126400F8309A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
