@@ -31,6 +31,14 @@
 		EE70963223F0A4BC00291AE9 /* FavouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70963123F0A4BC00291AE9 /* FavouriteTableViewController.swift */; };
 		EE70963723F0A84100291AE9 /* FiveDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70963523F0A84100291AE9 /* FiveDayTableViewCell.swift */; };
 		EE70963823F0A84100291AE9 /* FiveDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE70963623F0A84100291AE9 /* FiveDayTableViewCell.xib */; };
+		EE79930423F173E900381CD4 /* GoogleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79930323F173E900381CD4 /* GoogleConstants.swift */; };
+		EE79930623F174F600381CD4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79930523F174F600381CD4 /* MoreViewController.swift */; };
+		EE79930A23F184D800381CD4 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = EE79930923F184D800381CD4 /* loader.json */; };
+		EE9E9B7923F1B4A700CA6E8E /* GoogleApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E9B7623F1B4A400CA6E8E /* GoogleApiHelper.swift */; };
+		EE9E9B7A23F1B4A700CA6E8E /* GoogleApiHelper+Nearby.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E9B7723F1B4A500CA6E8E /* GoogleApiHelper+Nearby.swift */; };
+		EE9E9B7B23F1B4A700CA6E8E /* NearByEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E9B7823F1B4A700CA6E8E /* NearByEnum.swift */; };
+		EEA1A61D23F1CC2B00472FCE /* PlacesNearMeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA1A61C23F1CC2B00472FCE /* PlacesNearMeManager.swift */; };
+		EEA1A61F23F1CC7600472FCE /* PlacesNearMeManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA1A61E23F1CC7600472FCE /* PlacesNearMeManagerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +95,14 @@
 		EE70963123F0A4BC00291AE9 /* FavouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewController.swift; sourceTree = "<group>"; };
 		EE70963523F0A84100291AE9 /* FiveDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayTableViewCell.swift; sourceTree = "<group>"; };
 		EE70963623F0A84100291AE9 /* FiveDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiveDayTableViewCell.xib; sourceTree = "<group>"; };
+		EE79930323F173E900381CD4 /* GoogleConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleConstants.swift; sourceTree = "<group>"; };
+		EE79930523F174F600381CD4 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		EE79930923F184D800381CD4 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		EE9E9B7623F1B4A400CA6E8E /* GoogleApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiHelper.swift; sourceTree = "<group>"; };
+		EE9E9B7723F1B4A500CA6E8E /* GoogleApiHelper+Nearby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleApiHelper+Nearby.swift"; sourceTree = "<group>"; };
+		EE9E9B7823F1B4A700CA6E8E /* NearByEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByEnum.swift; sourceTree = "<group>"; };
+		EEA1A61C23F1CC2B00472FCE /* PlacesNearMeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesNearMeManager.swift; sourceTree = "<group>"; };
+		EEA1A61E23F1CC7600472FCE /* PlacesNearMeManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesNearMeManagerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +159,7 @@
 		EE28A7AA23F0108400F8309A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EE79930223F173C100381CD4 /* GoogleLocation */,
 				EE28A7AB23F0109700F8309A /* OpenWeather */,
 			);
 			path = Services;
@@ -197,6 +214,7 @@
 				EE426B1023F0059E001CA940 /* AppDelegate.swift */,
 				EE426B1223F0059E001CA940 /* SceneDelegate.swift */,
 				EE426B2123F005A1001CA940 /* Info.plist */,
+				EE79930923F184D800381CD4 /* loader.json */,
 			);
 			path = DVTWeather;
 			sourceTree = "<group>";
@@ -251,6 +269,7 @@
 				EE426B1423F0059E001CA940 /* WeatherViewController.swift */,
 				EE70963123F0A4BC00291AE9 /* FavouriteTableViewController.swift */,
 				EE70963523F0A84100291AE9 /* FiveDayTableViewCell.swift */,
+				EE79930523F174F600381CD4 /* MoreViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,6 +280,27 @@
 				EE426B1923F0059E001CA940 /* DVTWeather.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EE79930223F173C100381CD4 /* GoogleLocation */ = {
+			isa = PBXGroup;
+			children = (
+				EE9E9B7523F1B47F00CA6E8E /* Google-Api-Helper */,
+				EE79930323F173E900381CD4 /* GoogleConstants.swift */,
+				EEA1A61C23F1CC2B00472FCE /* PlacesNearMeManager.swift */,
+				EEA1A61E23F1CC7600472FCE /* PlacesNearMeManagerModel.swift */,
+			);
+			path = GoogleLocation;
+			sourceTree = "<group>";
+		};
+		EE9E9B7523F1B47F00CA6E8E /* Google-Api-Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EE9E9B7623F1B4A400CA6E8E /* GoogleApiHelper.swift */,
+				EE9E9B7723F1B4A500CA6E8E /* GoogleApiHelper+Nearby.swift */,
+				EE9E9B7823F1B4A700CA6E8E /* NearByEnum.swift */,
+			);
+			path = "Google-Api-Helper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +414,7 @@
 			files = (
 				EE426B2023F005A1001CA940 /* LaunchScreen.storyboard in Resources */,
 				EE426B1D23F005A1001CA940 /* Assets.xcassets in Resources */,
+				EE79930A23F184D800381CD4 /* loader.json in Resources */,
 				EE28A7A923F00F5900F8309A /* README.md in Resources */,
 				EE70963823F0A84100291AE9 /* FiveDayTableViewCell.xib in Resources */,
 				EE426B1823F0059E001CA940 /* Main.storyboard in Resources */,
@@ -505,9 +546,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE426B1523F0059E001CA940 /* WeatherViewController.swift in Sources */,
+				EEA1A61F23F1CC7600472FCE /* PlacesNearMeManagerModel.swift in Sources */,
 				EE426B1B23F0059E001CA940 /* DVTWeather.xcdatamodeld in Sources */,
 				EE28A7AD23F010ED00F8309A /* WeatherManager.swift in Sources */,
+				EE9E9B7923F1B4A700CA6E8E /* GoogleApiHelper.swift in Sources */,
 				EE70963223F0A4BC00291AE9 /* FavouriteTableViewController.swift in Sources */,
+				EE79930423F173E900381CD4 /* GoogleConstants.swift in Sources */,
+				EE79930623F174F600381CD4 /* MoreViewController.swift in Sources */,
+				EEA1A61D23F1CC2B00472FCE /* PlacesNearMeManager.swift in Sources */,
 				EE70962E23F0844D00291AE9 /* FiveDayWeatherData.swift in Sources */,
 				EE28A7B123F0119C00F8309A /* WeatherModel.swift in Sources */,
 				EE70963023F08E0100291AE9 /* FiveDayWeatherModel.swift in Sources */,
@@ -515,8 +561,10 @@
 				EE28A7AF23F0115E00F8309A /* WeatherData.swift in Sources */,
 				EE28A7B523F05E1A00F8309A /* WeatherConstants.swift in Sources */,
 				EE70962C23F07D4700291AE9 /* FiveDayWeatherManager.swift in Sources */,
+				EE9E9B7A23F1B4A700CA6E8E /* GoogleApiHelper+Nearby.swift in Sources */,
 				EE426B1323F0059E001CA940 /* SceneDelegate.swift in Sources */,
 				EE70963723F0A84100291AE9 /* FiveDayTableViewCell.swift in Sources */,
+				EE9E9B7B23F1B4A700CA6E8E /* NearByEnum.swift in Sources */,
 				EE28A7B323F0126400F8309A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

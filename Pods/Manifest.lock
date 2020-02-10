@@ -1,16 +1,20 @@
 PODS:
   - BonMot (5.5)
+  - lottie-ios (3.1.6)
 
 DEPENDENCIES:
   - BonMot
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
     - BonMot
+    - lottie-ios
 
 SPEC CHECKSUMS:
   BonMot: 58a86daf442518ff78e00cf54430fd03de37945a
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
 
-PODFILE CHECKSUM: 77d05ecb0b090f6eecfc1a382505aba73677017b
+PODFILE CHECKSUM: ad0541aec95bc40a7131dcd28eff72dd5518ff12
 
 COCOAPODS: 1.8.4

@@ -11,4 +11,16 @@ import UIKit
 struct K{
     static let fiveDayNIB = "FiveDayTableViewCell"
     static let fiveDayCellReuseIdentifier = "ReusableCell"
+    
+    static let lottieLoadingAnimation = "loader"
+    static let lottieDir = "Resources"
+    
+    static let MoreSeque = "MoreSeque"
+    
+    static let mapRegionRadius:Double = 2000
+    static let searchRegionRadius:Int = 1000
+    static let nearMeCellReuseIdentifier = "NearMeCell"
+    static let nearMeLocationCaption = "Location"
+    static let nearMeSearchFor = "Restaurants"
+    
 }
