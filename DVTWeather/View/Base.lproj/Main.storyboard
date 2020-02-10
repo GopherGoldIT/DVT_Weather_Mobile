@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--More View Controller-->
         <scene sceneID="Nzk-gB-sDU">
             <objects>
-                <viewController id="FYY-Zf-uam" sceneMemberID="viewController">
+                <viewController id="FYY-Zf-uam" customClass="MoreViewController" customModule="DVTWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IYH-qA-eEf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="2273.913043478261" y="459.375"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Favourite Table View Controller-->
         <scene sceneID="dsY-nD-2mh">
             <objects>
-                <tableViewController id="ugg-5N-uUu" sceneMemberID="viewController">
+                <tableViewController id="ugg-5N-uUu" customClass="FavouriteTableViewController" customModule="DVTWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="40u-bo-92p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

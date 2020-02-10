@@ -31,6 +31,8 @@
 		EE70963223F0A4BC00291AE9 /* FavouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70963123F0A4BC00291AE9 /* FavouriteTableViewController.swift */; };
 		EE70963723F0A84100291AE9 /* FiveDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70963523F0A84100291AE9 /* FiveDayTableViewCell.swift */; };
 		EE70963823F0A84100291AE9 /* FiveDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE70963623F0A84100291AE9 /* FiveDayTableViewCell.xib */; };
+		EE79930423F173E900381CD4 /* GoogleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79930323F173E900381CD4 /* GoogleConstants.swift */; };
+		EE79930623F174F600381CD4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79930523F174F600381CD4 /* MoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		EE70963123F0A4BC00291AE9 /* FavouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewController.swift; sourceTree = "<group>"; };
 		EE70963523F0A84100291AE9 /* FiveDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayTableViewCell.swift; sourceTree = "<group>"; };
 		EE70963623F0A84100291AE9 /* FiveDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiveDayTableViewCell.xib; sourceTree = "<group>"; };
+		EE79930323F173E900381CD4 /* GoogleConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleConstants.swift; sourceTree = "<group>"; };
+		EE79930523F174F600381CD4 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 		EE28A7AA23F0108400F8309A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EE79930223F173C100381CD4 /* GoogleLocation */,
 				EE28A7AB23F0109700F8309A /* OpenWeather */,
 			);
 			path = Services;
@@ -251,6 +256,7 @@
 				EE426B1423F0059E001CA940 /* WeatherViewController.swift */,
 				EE70963123F0A4BC00291AE9 /* FavouriteTableViewController.swift */,
 				EE70963523F0A84100291AE9 /* FiveDayTableViewCell.swift */,
+				EE79930523F174F600381CD4 /* MoreViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,6 +267,14 @@
 				EE426B1923F0059E001CA940 /* DVTWeather.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EE79930223F173C100381CD4 /* GoogleLocation */ = {
+			isa = PBXGroup;
+			children = (
+				EE79930323F173E900381CD4 /* GoogleConstants.swift */,
+			);
+			path = GoogleLocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,6 +558,8 @@
 				EE426B1B23F0059E001CA940 /* DVTWeather.xcdatamodeld in Sources */,
 				EE28A7AD23F010ED00F8309A /* WeatherManager.swift in Sources */,
 				EE70963223F0A4BC00291AE9 /* FavouriteTableViewController.swift in Sources */,
+				EE79930423F173E900381CD4 /* GoogleConstants.swift in Sources */,
+				EE79930623F174F600381CD4 /* MoreViewController.swift in Sources */,
 				EE70962E23F0844D00291AE9 /* FiveDayWeatherData.swift in Sources */,
 				EE28A7B123F0119C00F8309A /* WeatherModel.swift in Sources */,
 				EE70963023F08E0100291AE9 /* FiveDayWeatherModel.swift in Sources */,
