@@ -17,6 +17,8 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var fiveDayForecastTable: UITableView!
+    @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var favouritesButton: UIButton!
     
     var weatherManager = WeatherManager()
     var fiveDayWeatherManager = FiveDayWeatherManager()
@@ -45,6 +47,13 @@ class WeatherViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         GetLocation()
+    }
+    
+   
+    @IBAction func moreButtonClick(_ sender: UIButton) {
+    }
+    
+    @IBAction func favouriteButtonClick(_ sender: UIButton) {
     }
     
     func DegAttributeText(_ text:String,_ fontBase:UIFont, _ color:UIColor )->NSAttributedString{
@@ -80,6 +89,8 @@ class WeatherViewController: UIViewController {
         self.cityLabel.text = ""
         self.conditionLabel.text = ""
         self.backgroundView.backgroundColor = #colorLiteral(red: 0.2784313725, green: 0.6705882353, blue: 0.1843137255, alpha: 1)
+        self.moreButton.isEnabled = false
+        self.favouritesButton.isEnabled = false
     }
 }
 
@@ -132,6 +143,7 @@ extension WeatherViewController: FiveDayWeatherManagerDelegate {
         DispatchQueue.main.async {
             self.fiveDayList = weather;
             self.fiveDayForecastTable.reloadData()
+            self.moreButton.isEnabled = true
         }
     }
     
