@@ -45,17 +45,25 @@ class WeatherViewController: UIViewController {
         SetDefault()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden=true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden=false
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         GetLocation()
     }
     
-   
-    @IBAction func moreButtonClick(_ sender: UIButton) {
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
-    @IBAction func favouriteButtonClick(_ sender: UIButton) {
-    }
-    
+    // MARK: - Custom UI
     func DegAttributeText(_ text:String,_ fontBase:UIFont, _ color:UIColor )->NSAttributedString{
         let garamondStyle = StringStyle(
             .font(.systemFont(ofSize: fontBase.pointSize)!),
