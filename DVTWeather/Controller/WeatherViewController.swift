@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import BonMot
+import Lottie
 
 class WeatherViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -19,15 +20,18 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var fiveDayForecastTable: UITableView!
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var favouritesButton: UIButton!
+    @IBOutlet weak var lottieAnimation: UIView!
     
     var weatherManager = WeatherManager()
     var fiveDayWeatherManager = FiveDayWeatherManager()
-    
+    var currentWeather: WeatherModel?
     var fiveDayList: FiveWeatherListModel?
     let locationManager = CLLocationManager()
     
     var lat : CLLocationDegrees?
     var lon : CLLocationDegrees?
+    
+    let animationView = AnimationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +40,15 @@ class WeatherViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
-        fiveDayForecastTable.delegate = self
         fiveDayForecastTable.dataSource = self
         fiveDayForecastTable.register(UINib(nibName: K.fiveDayNIB, bundle: nil), forCellReuseIdentifier: K.fiveDayCellReuseIdentifier)
         
         weatherManager.delegate = self
         fiveDayWeatherManager.delegate = self
+        
+        SetupLottie()
         SetDefault()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden=true
@@ -60,8 +64,14 @@ class WeatherViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == K.MoreSeque
+        {
+            if let destinationVC = segue.destination as? MoreViewController {
+                if let geoLat = lat,let geoLon = lon{
+                    destinationVC.SetLocation(geoLat,geoLon)
+                }
+            }
+        }
     }
     // MARK: - Custom UI
     func DegAttributeText(_ text:String,_ fontBase:UIFont, _ color:UIColor )->NSAttributedString{
@@ -82,12 +92,13 @@ class WeatherViewController: UIViewController {
         return string.styled(with: garamondStyle.byAdding(
             .xmlRules([
                 .style("ordinal", decimalStyle.byAdding(.ordinals(true))),
-                ])
+            ])
             )
         )
     }
     
     func GetLocation(){
+        ShowLottie()
         locationManager.requestLocation()
     }
     
@@ -120,6 +131,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         SetDefault()
+        HideLottie()
         self.cityLabel.text = "Error : " + error.localizedDescription
     }
 }
@@ -128,6 +140,7 @@ extension WeatherViewController: WeatherManagerDelegate {
     
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         DispatchQueue.main.async {
+            self.currentWeather = weather
             self.temperatureLabel.attributedText = self.DegAttributeText(weather.temperatureString,self.temperatureLabel.font,self.temperatureLabel.textColor)
             self.conditionImage.image = UIImage(systemName: weather.conditionName)
             self.cityLabel.text = weather.title
@@ -141,6 +154,7 @@ extension WeatherViewController: WeatherManagerDelegate {
     
     func didFailWithError(error: Error) {
         SetDefault()
+        HideLottie()
         self.cityLabel.text = "Error : " + error.localizedDescription
     }
 }
@@ -152,18 +166,17 @@ extension WeatherViewController: FiveDayWeatherManagerDelegate {
             self.fiveDayList = weather;
             self.fiveDayForecastTable.reloadData()
             self.moreButton.isEnabled = true
+            self.HideLottie()
         }
     }
     
     func didFailWithErrorFiveDayWeather(error: Error) {
         SetDefault()
+        HideLottie()
         self.cityLabel.text = "Error : " + error.localizedDescription
     }
 }
-
-extension WeatherViewController:UITableViewDelegate{
-    
-}
+//MARK: - UITableViewDataSource
 extension WeatherViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.fiveDayCellReuseIdentifier , for: indexPath) as! FiveDayTableViewCell
@@ -183,6 +196,38 @@ extension WeatherViewController:UITableViewDataSource{
         }
     }
 }
-
-
+//MARK: - LottieFunctions
+extension WeatherViewController{
+    func SetupLottie(){
+        let animation = Animation.named(K.lottieLoadingAnimation)
+        animationView.animation = animation
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        lottieAnimation.addSubview(animationView)
+        //lottieAnimation.isHidden=true
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.topAnchor.constraint(equalTo: lottieAnimation.layoutMarginsGuide.topAnchor).isActive = true
+        animationView.leadingAnchor.constraint(equalTo: lottieAnimation.leadingAnchor).isActive = true
+        
+        animationView.bottomAnchor.constraint(equalTo: lottieAnimation.bottomAnchor).isActive = true
+        animationView.trailingAnchor.constraint(equalTo: lottieAnimation.trailingAnchor).isActive = true
+        
+        animationView.backgroundBehavior = .pauseAndRestore
+        
+    }
+    func ShowLottie(){
+        DispatchQueue.main.async {
+            self.lottieAnimation.isHidden=false
+            self.animationView.play()
+        }
+    }
+    func HideLottie(){
+        DispatchQueue.main.async {
+            self.animationView.stop()
+            self.lottieAnimation.isHidden=true
+        }
+    }
+    
+}
 

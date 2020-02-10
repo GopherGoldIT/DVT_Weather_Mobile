@@ -43,26 +43,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="adL-ch-EyW">
-                                <rect key="frame" x="0.0" y="504" width="414" height="332"/>
+                                <rect key="frame" x="0.0" y="504" width="414" height="313"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMc-dC-0yG">
-                                <rect key="frame" x="28" y="832" width="366" height="30"/>
+                                <rect key="frame" x="28" y="813" width="366" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="More"/>
+                                <state key="normal" title="More">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <segue destination="FYY-Zf-uam" kind="show" id="rQj-kc-1ku"/>
+                                    <segue destination="FYY-Zf-uam" kind="show" identifier="MoreSeque" id="rQj-kc-1ku"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qh-HX-SgF">
-                                <rect key="frame" x="28" y="860" width="366" height="30"/>
+                                <rect key="frame" x="29" y="844" width="366" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Favourites"/>
+                                <state key="normal" title="Favourites">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="ugg-5N-uUu" kind="show" id="PUz-jd-j2f"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u4S-HU-gw2">
+                                <rect key="frame" x="20" y="99" width="137" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="Color_Sunny"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -75,6 +84,7 @@
                         <outlet property="conditionLabel" destination="dRV-4v-2EF" id="fZg-Es-sq0"/>
                         <outlet property="favouritesButton" destination="7Qh-HX-SgF" id="eZA-lc-9Wt"/>
                         <outlet property="fiveDayForecastTable" destination="adL-ch-EyW" id="www-v2-RDX"/>
+                        <outlet property="lottieAnimation" destination="u4S-HU-gw2" id="PqB-Tl-S7v"/>
                         <outlet property="moreButton" destination="rMc-dC-0yG" id="rt3-vp-EGE"/>
                         <outlet property="temperatureLabel" destination="9kF-Af-Du2" id="CFz-tX-eNU"/>
                     </connections>
@@ -90,10 +100,19 @@
                     <view key="view" contentMode="scaleToFill" id="IYH-qA-eEf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VgA-Tw-ajm">
+                                <rect key="frame" x="32" y="96" width="334" height="247"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="JPC-0a-jc3"/>
                     </view>
                     <navigationItem key="navigationItem" id="2oN-3h-55E"/>
+                    <connections>
+                        <outlet property="mapKit" destination="VgA-Tw-ajm" id="aqb-2S-eo7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6P9-yi-S2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
