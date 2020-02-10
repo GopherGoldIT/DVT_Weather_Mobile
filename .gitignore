@@ -92,4 +92,3 @@ iOSInjectionProject/
 #system files
 .DS_Store
 Podfile.lock
-DVTWeather/Services/OpenWeather/WeatherConstants.swift

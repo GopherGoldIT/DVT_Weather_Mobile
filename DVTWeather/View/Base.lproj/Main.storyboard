@@ -42,6 +42,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="adL-ch-EyW">
+                                <rect key="frame" x="0.0" y="504" width="414" height="392"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" name="Color_Sunny"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -51,6 +56,7 @@
                         <outlet property="cityLabel" destination="EvQ-mF-80e" id="Bcy-1r-o9x"/>
                         <outlet property="conditionImage" destination="XKj-5y-twR" id="k3T-mR-yFt"/>
                         <outlet property="conditionLabel" destination="dRV-4v-2EF" id="fZg-Es-sq0"/>
+                        <outlet property="fiveDayForecastTable" destination="adL-ch-EyW" id="www-v2-RDX"/>
                         <outlet property="temperatureLabel" destination="9kF-Af-Du2" id="CFz-tX-eNU"/>
                     </connections>
                 </viewController>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,12 @@
 		EE426B2023F005A1001CA940 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE426B1E23F005A1001CA940 /* LaunchScreen.storyboard */; };
 		EE426B2B23F005A1001CA940 /* DVTWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B2A23F005A1001CA940 /* DVTWeatherTests.swift */; };
 		EE426B3623F005A1001CA940 /* DVTWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE426B3523F005A1001CA940 /* DVTWeatherUITests.swift */; };
+		EE70962C23F07D4700291AE9 /* FiveDayWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70962B23F07D4700291AE9 /* FiveDayWeatherManager.swift */; };
+		EE70962E23F0844D00291AE9 /* FiveDayWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70962D23F0844D00291AE9 /* FiveDayWeatherData.swift */; };
+		EE70963023F08E0100291AE9 /* FiveDayWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70962F23F08E0100291AE9 /* FiveDayWeatherModel.swift */; };
+		EE70963223F0A4BC00291AE9 /* FavouriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70963123F0A4BC00291AE9 /* FavouriteTableViewController.swift */; };
+		EE70963723F0A84100291AE9 /* FiveDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE70963523F0A84100291AE9 /* FiveDayTableViewCell.swift */; };
+		EE70963823F0A84100291AE9 /* FiveDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE70963623F0A84100291AE9 /* FiveDayTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,12 @@
 		EE426B3123F005A1001CA940 /* DVTWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVTWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE426B3523F005A1001CA940 /* DVTWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVTWeatherUITests.swift; sourceTree = "<group>"; };
 		EE426B3723F005A1001CA940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE70962B23F07D4700291AE9 /* FiveDayWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayWeatherManager.swift; sourceTree = "<group>"; };
+		EE70962D23F0844D00291AE9 /* FiveDayWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayWeatherData.swift; sourceTree = "<group>"; };
+		EE70962F23F08E0100291AE9 /* FiveDayWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayWeatherModel.swift; sourceTree = "<group>"; };
+		EE70963123F0A4BC00291AE9 /* FavouriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewController.swift; sourceTree = "<group>"; };
+		EE70963523F0A84100291AE9 /* FiveDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayTableViewCell.swift; sourceTree = "<group>"; };
+		EE70963623F0A84100291AE9 /* FiveDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiveDayTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +155,9 @@
 				EE28A7AE23F0115E00F8309A /* WeatherData.swift */,
 				EE28A7B023F0119C00F8309A /* WeatherModel.swift */,
 				EE28A7B423F05E1A00F8309A /* WeatherConstants.swift */,
+				EE70962B23F07D4700291AE9 /* FiveDayWeatherManager.swift */,
+				EE70962D23F0844D00291AE9 /* FiveDayWeatherData.swift */,
+				EE70962F23F08E0100291AE9 /* FiveDayWeatherModel.swift */,
 			);
 			path = OpenWeather;
 			sourceTree = "<group>";
@@ -225,6 +240,7 @@
 			children = (
 				EE426B1623F0059E001CA940 /* Main.storyboard */,
 				EE426B1E23F005A1001CA940 /* LaunchScreen.storyboard */,
+				EE70963623F0A84100291AE9 /* FiveDayTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				EE426B1423F0059E001CA940 /* WeatherViewController.swift */,
+				EE70963123F0A4BC00291AE9 /* FavouriteTableViewController.swift */,
+				EE70963523F0A84100291AE9 /* FiveDayTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +274,7 @@
 				EE426B0923F0059E001CA940 /* Sources */,
 				EE426B0A23F0059E001CA940 /* Frameworks */,
 				EE426B0B23F0059E001CA940 /* Resources */,
+				B950E98D3BDBBADF264C142D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -293,6 +312,7 @@
 				EE426B2D23F005A1001CA940 /* Sources */,
 				EE426B2E23F005A1001CA940 /* Frameworks */,
 				EE426B2F23F005A1001CA940 /* Resources */,
+				A23B1CF5DBC117038E6D89C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,6 +375,7 @@
 				EE426B2023F005A1001CA940 /* LaunchScreen.storyboard in Resources */,
 				EE426B1D23F005A1001CA940 /* Assets.xcassets in Resources */,
 				EE28A7A923F00F5900F8309A /* README.md in Resources */,
+				EE70963823F0A84100291AE9 /* FiveDayTableViewCell.xib in Resources */,
 				EE426B1823F0059E001CA940 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +441,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A23B1CF5DBC117038E6D89C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DVTWeather-DVTWeatherUITests/Pods-DVTWeather-DVTWeatherUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DVTWeather-DVTWeatherUITests/Pods-DVTWeather-DVTWeatherUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DVTWeather-DVTWeatherUITests/Pods-DVTWeather-DVTWeatherUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A3BE01DC411A3F735AE45A19 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,6 +480,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B950E98D3BDBBADF264C142D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DVTWeather/Pods-DVTWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DVTWeather/Pods-DVTWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DVTWeather/Pods-DVTWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -452,11 +507,16 @@
 				EE426B1523F0059E001CA940 /* WeatherViewController.swift in Sources */,
 				EE426B1B23F0059E001CA940 /* DVTWeather.xcdatamodeld in Sources */,
 				EE28A7AD23F010ED00F8309A /* WeatherManager.swift in Sources */,
+				EE70963223F0A4BC00291AE9 /* FavouriteTableViewController.swift in Sources */,
+				EE70962E23F0844D00291AE9 /* FiveDayWeatherData.swift in Sources */,
 				EE28A7B123F0119C00F8309A /* WeatherModel.swift in Sources */,
+				EE70963023F08E0100291AE9 /* FiveDayWeatherModel.swift in Sources */,
 				EE426B1123F0059E001CA940 /* AppDelegate.swift in Sources */,
 				EE28A7AF23F0115E00F8309A /* WeatherData.swift in Sources */,
 				EE28A7B523F05E1A00F8309A /* WeatherConstants.swift in Sources */,
+				EE70962C23F07D4700291AE9 /* FiveDayWeatherManager.swift in Sources */,
 				EE426B1323F0059E001CA940 /* SceneDelegate.swift in Sources */,
+				EE70963723F0A84100291AE9 /* FiveDayTableViewCell.swift in Sources */,
 				EE28A7B323F0126400F8309A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
