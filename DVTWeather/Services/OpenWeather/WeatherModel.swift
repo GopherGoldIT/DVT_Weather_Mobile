@@ -20,6 +20,17 @@ struct WeatherModel {
     let temperature: Double
     let temperatureMin: Double
     let temperatureMax: Double
+    let date : Date
+    let lon: Double
+    let lat: Double
+    
+    var title:String{
+        if cityName.count != 0 {
+            return cityName
+        }else{
+            return "\(lon),\(lat)"
+        }
+    }
     
     var temperatureString: String {
         return String(format: "%.1f", temperature)

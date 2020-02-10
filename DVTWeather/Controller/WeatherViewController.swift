@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import BonMot
 
 class WeatherViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -35,6 +36,7 @@ class WeatherViewController: UIViewController {
         
         fiveDayForecastTable.delegate = self
         fiveDayForecastTable.dataSource = self
+        fiveDayForecastTable.register(UINib(nibName: K.fiveDayNIB, bundle: nil), forCellReuseIdentifier: K.fiveDayCellReuseIdentifier)
         
         weatherManager.delegate = self
         fiveDayWeatherManager.delegate = self
@@ -45,12 +47,35 @@ class WeatherViewController: UIViewController {
         GetLocation()
     }
     
+    func DegAttributeText(_ text:String,_ fontBase:UIFont, _ color:UIColor )->NSAttributedString{
+        let garamondStyle = StringStyle(
+            .font(.systemFont(ofSize: fontBase.pointSize)!),
+            .color(color),
+            .lineHeightMultiple(1.2),
+            .adapt(.body)
+        )
+        let decimalStyle = StringStyle(
+            .font(.systemFont(ofSize: fontBase.pointSize/2)!),
+            .color(color),
+            .lineHeightMultiple(1.2),
+            .baselineOffset(6),
+            .adapt(.body)
+        )
+        let string = "\(text)<ordinal> 0</ordinal>"
+        return string.styled(with: garamondStyle.byAdding(
+            .xmlRules([
+                .style("ordinal", decimalStyle.byAdding(.ordinals(true))),
+                ])
+            )
+        )
+    }
+    
     func GetLocation(){
         locationManager.requestLocation()
     }
     
     func SetDefault(){
-        self.temperatureLabel.text = "0"
+        self.temperatureLabel.attributedText = DegAttributeText("0",self.temperatureLabel.font,self.temperatureLabel.textColor)
         self.conditionImage.image = UIImage(systemName: "sun.max")
         self.cityLabel.text = ""
         self.conditionLabel.text = ""
@@ -84,9 +109,9 @@ extension WeatherViewController: WeatherManagerDelegate {
     
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         DispatchQueue.main.async {
-            self.temperatureLabel.text = weather.temperatureString
+            self.temperatureLabel.attributedText = self.DegAttributeText(weather.temperatureString,self.temperatureLabel.font,self.temperatureLabel.textColor)
             self.conditionImage.image = UIImage(systemName: weather.conditionName)
-            self.cityLabel.text = weather.cityName
+            self.cityLabel.text = weather.title
             self.conditionLabel.text = weather.conditionLabel
             self.backgroundView.backgroundColor = weather.conditionBackgroungColor
             if let lat = self.lat, let lon = self.lon{
@@ -105,9 +130,8 @@ extension WeatherViewController: FiveDayWeatherManagerDelegate {
     
     func didUpdateFiveDayWeather(_ fiveDayeatherManager: FiveDayWeatherManager, weather: FiveWeatherListModel) {
         DispatchQueue.main.async {
-            for dayWeather in weather.list{
-                print(dayWeather.dateString)
-            }
+            self.fiveDayList = weather;
+            self.fiveDayForecastTable.reloadData()
         }
     }
     
@@ -121,6 +145,16 @@ extension WeatherViewController:UITableViewDelegate{
     
 }
 extension WeatherViewController:UITableViewDataSource{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.fiveDayCellReuseIdentifier , for: indexPath) as! FiveDayTableViewCell
+        if let fiveDay = fiveDayList{
+            cell.dayLabel.text = fiveDay.list[indexPath.row].dateString
+            cell.conditionImage.image =  UIImage(systemName: fiveDay.list[indexPath.row].conditionName)
+            cell.tempretureLabel.attributedText = self.DegAttributeText(fiveDay.list[indexPath.row].temperatureString,cell.tempretureLabel.font,cell.tempretureLabel.textColor)
+        }
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let fiveDay = fiveDayList{
             return fiveDay.list.count
@@ -128,18 +162,6 @@ extension WeatherViewController:UITableViewDataSource{
             return 0
         }
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FiveDayCell", for: indexPath) as! FiveDayTableViewCell
-        if let fiveDay = fiveDayList{
-            cell.dayLabel.text = fiveDay.list[indexPath.row].dateString
-            cell.conditionImage.image =  UIImage(systemName: fiveDay.list[indexPath.row].conditionName)
-            cell.tempretureLabel.text = fiveDay.list[indexPath.row].temperatureString
-        }
-        return cell
-    }
-    
-    
 }
 
 

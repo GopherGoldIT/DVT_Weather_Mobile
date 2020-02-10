@@ -11,7 +11,9 @@ import Foundation
 struct WeatherData: Codable {
     let name: String
     let main: Main
+    let coord: Coord
     let weather: [Weather]
+    let dt : Double
 }
 
 struct Main: Codable {
@@ -23,4 +25,9 @@ struct Main: Codable {
 struct Weather: Codable {
     let description: String
     let id: Int
+}
+
+struct Coord:Codable {
+    let lon: Double
+    let lat: Double
 }

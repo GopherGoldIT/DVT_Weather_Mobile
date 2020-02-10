@@ -9,5 +9,6 @@
 import UIKit
 
 struct K{
-
+    static let fiveDayNIB = "FiveDayTableViewCell"
+    static let fiveDayCellReuseIdentifier = "ReusableCell"
 }
