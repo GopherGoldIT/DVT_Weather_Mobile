@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 class CoreDataManager {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -34,10 +35,14 @@ class CoreDataManager {
         }
     }
     
-    func  AddPrompt(viewControl : UIViewController , cityName : String , lat : Double , lon : Double){
+    func  AddPrompt(viewControl : UIViewController , cityName : String , lat : Double , lon : Double,exactLat:Double,exactLon:Double,currentWeather: WeatherModel){
+        let exactlatlon = "\(exactLat),\(exactLon)"
         let latlon = "\(lat),\(lon)"
         
-        let found = favArray.filter{$0.latlon == latlon}.count > 0
+        print(exactlatlon)
+        print(latlon)
+        
+        let found = favArray.filter{$0.latlon == latlon || $0.exactLatLon == exactlatlon}.count > 0
         if !found{
             var textField = UITextField()
             
@@ -50,8 +55,12 @@ class CoreDataManager {
                     newFav.lat = lat
                     newFav.lon = lon
                     newFav.latlon = latlon
+                    newFav.exactLat = exactLat
+                    newFav.exactLon =  exactLon
+                    newFav.exactLatLon = exactlatlon
                     self.favArray.append(newFav)
                     self.SaveItems()
+                    self.AttemptSaveLoaction(weather: currentWeather)
                 }
             }
             
@@ -68,6 +77,24 @@ class CoreDataManager {
             let alert = UIAlertController(title: "Already a Favourite?", message: "Sorry this location has already been added to your favourites.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             viewControl.present(alert, animated: true)
+        }
+    }
+    
+    func RemoveAt(row:Int){
+        context.delete(favArray[row])
+        favArray.remove(at: row)
+        SaveItems()
+    }
+    
+    func tryFind(lat : CLLocationDegrees?,lon : CLLocationDegrees?,exactLat : Double?,exactLon : Double?)->[Favourite]{
+        if let elat = exactLat, let elon = exactLon{
+            let latlon = "\(elat),\(elon)"
+            return favArray.filter{$0.exactLatLon == latlon}
+        }else if let locLat = lat, let locLon = lon{
+            let latlon = "\(locLat),\(locLon)"
+            return favArray.filter{$0.exactLatLon == latlon}
+        }else{
+            return [Favourite]()
         }
     }
     

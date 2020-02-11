@@ -25,4 +25,6 @@ struct K{
     
     static let favCellReuseIdentifier = "FavReuse"
     
+    static let OfflineErrorCode = -1009
+    
 }
