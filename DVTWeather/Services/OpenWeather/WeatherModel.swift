@@ -104,9 +104,9 @@ struct WeatherModel {
     var conditionBackgroungColor : UIColor{
         switch WeatherConditionTypeID {
         case WeatherConditionTypeID.Cloudy:
-            return  #colorLiteral(red: 0.3294117647, green: 0.4431372549, blue: 0.4784313725, alpha: 1)
+            return  #colorLiteral(red: 0.3843137255, green: 0.5215686275, blue: 0.5803921569, alpha: 1)
         case WeatherConditionTypeID.Sunny:
-            return  #colorLiteral(red: 0.2784313725, green: 0.6705882353, blue: 0.1843137255, alpha: 1)
+            return  #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
         default:
             return  #colorLiteral(red: 0.3411764706, green: 0.3411764706, blue: 0.3647058824, alpha: 1)
         }

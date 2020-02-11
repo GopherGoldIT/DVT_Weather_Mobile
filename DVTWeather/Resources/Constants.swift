@@ -23,4 +23,6 @@ struct K{
     static let nearMeLocationCaption = "Location"
     static let nearMeSearchFor = "Restaurants"
     
+    static let favCellReuseIdentifier = "FavReuse"
+    
 }

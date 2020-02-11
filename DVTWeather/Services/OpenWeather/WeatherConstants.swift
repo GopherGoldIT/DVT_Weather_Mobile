@@ -9,7 +9,7 @@
 import Foundation
 
 struct Openweathermap{
-    static let app_key = "appid=key" //your key from https://openweathermap.org/appid
+    static let app_key = Keys.app_key //your key from https://openweathermap.org/appid
     static let base = "https://api.openweathermap.org/data/2.5/weather"
     static let baseFiveDay = "https://api.openweathermap.org/data/2.5/forecast"
     static let units = "&units=metric"
