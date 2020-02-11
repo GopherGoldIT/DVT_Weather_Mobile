@@ -35,6 +35,7 @@
 		EE79930623F174F600381CD4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79930523F174F600381CD4 /* MoreViewController.swift */; };
 		EE79930A23F184D800381CD4 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = EE79930923F184D800381CD4 /* loader.json */; };
 		EE7ED78623F26B9300C0EB2A /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7ED78523F26B9300C0EB2A /* Keys.swift */; };
+		EE7ED78823F2CCC400C0EB2A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7ED78723F2CCC400C0EB2A /* CoreDataManager.swift */; };
 		EE9E9B7923F1B4A700CA6E8E /* GoogleApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E9B7623F1B4A400CA6E8E /* GoogleApiHelper.swift */; };
 		EE9E9B7A23F1B4A700CA6E8E /* GoogleApiHelper+Nearby.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E9B7723F1B4A500CA6E8E /* GoogleApiHelper+Nearby.swift */; };
 		EE9E9B7B23F1B4A700CA6E8E /* NearByEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9E9B7823F1B4A700CA6E8E /* NearByEnum.swift */; };
@@ -100,6 +101,7 @@
 		EE79930523F174F600381CD4 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		EE79930923F184D800381CD4 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		EE7ED78523F26B9300C0EB2A /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		EE7ED78723F2CCC400C0EB2A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		EE9E9B7623F1B4A400CA6E8E /* GoogleApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiHelper.swift; sourceTree = "<group>"; };
 		EE9E9B7723F1B4A500CA6E8E /* GoogleApiHelper+Nearby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleApiHelper+Nearby.swift"; sourceTree = "<group>"; };
 		EE9E9B7823F1B4A700CA6E8E /* NearByEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByEnum.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				EE426B1923F0059E001CA940 /* DVTWeather.xcdatamodeld */,
+				EE7ED78723F2CCC400C0EB2A /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				EE70963223F0A4BC00291AE9 /* FavouriteTableViewController.swift in Sources */,
 				EE79930423F173E900381CD4 /* GoogleConstants.swift in Sources */,
 				EE79930623F174F600381CD4 /* MoreViewController.swift in Sources */,
+				EE7ED78823F2CCC400C0EB2A /* CoreDataManager.swift in Sources */,
 				EEA1A61D23F1CC2B00472FCE /* PlacesNearMeManager.swift in Sources */,
 				EE70962E23F0844D00291AE9 /* FiveDayWeatherData.swift in Sources */,
 				EE28A7B123F0119C00F8309A /* WeatherModel.swift in Sources */,

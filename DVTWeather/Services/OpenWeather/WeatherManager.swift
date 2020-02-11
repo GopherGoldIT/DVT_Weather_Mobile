@@ -40,6 +40,16 @@ struct WeatherManager {
     func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         if Openweathermap.app_key != "appid=key" {
             let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
+            print(urlString)
+            performRequest(with: urlString)
+        }else{
+            delegate?.didFailWithError(error: WeatherManagerError.key)
+        }
+    }
+    
+    func fetchWeatherDouble(latitude: Double, longitude: Double) {
+        if Openweathermap.app_key != "appid=key" {
+            let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
             performRequest(with: urlString)
         }else{
             delegate?.didFailWithError(error: WeatherManagerError.key)
