@@ -2,12 +2,12 @@
 
 To run and build:
 
+Update Keys in DVTWeather\keys.swift
+
 1)  To genereate a key please visit https://openweathermap.org/appid
-Insert the key into DVTWeather->Services->OpenWeather->OpenWeatherConstants.swift:
  app_key = "appid=key" 
  
  2) Google Locations key
- Insert the key into DVTWeather->Services->GoogleLocation->GoogleConstants.swift:
  provideAPIKey = "YOUR_API_KEY"
  
  NB Please do not restrict the key.
