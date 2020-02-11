@@ -9,7 +9,7 @@
 import Foundation
 
 struct GoogleLocations{
-    static let provideAPIKey = "YOUR_API_KEY" //your key from http://console.developers.google.com/
+    static let provideAPIKey = Keys.provideAPIKey //your key from http://console.developers.google.com/
     /*
      You will need :
      Google Maps iOS SDK
